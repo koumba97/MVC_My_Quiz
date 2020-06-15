@@ -13,20 +13,11 @@ class QuizController extends AbstractController
      */
     public function index(Request $request)
     {
-        $playerName = $request->get('playername');
         
-        $categorie = $this->getDoctrine('categorie')
-        ->getRepository('AppBundle:Categorie');
 
-        if (!$product) {
-            throw $this->createNotFoundException(
-                'No product found for id '.$productId
-            );
-        }
-
-        // return $this->render('quiz/index.html.twig', [
-        //     'controller_name' => 'QuizController',
-        // ]);
+        return $this->render('quiz/index.html.twig', [
+            'controller_name' => 'QuizController',
+        ]);
     }
 
     /**
