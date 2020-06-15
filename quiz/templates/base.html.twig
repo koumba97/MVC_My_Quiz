@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}hey!{% endblock %}</title>
+        {% block stylesheets %} {{ encore_entry_link_tags('app') }}{% endblock %}
+    </head>
+    <body>
+        <nav>
+            <h3>Quizz</h3>
+            <div>
+                <p><a href='/'>HOME</a></p>
+                <p><a href='#'>ADMIN</a></p>
+                <p><a href='scores'>SCORE</a></p>
+            </div>
+        </nav>
+        
+        {% block body %}{% endblock %}
+       
+    </body>
+</html>

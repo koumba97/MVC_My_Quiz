@@ -1,0 +1,261 @@
+$yellow:rgb(255, 199, 31);
+$blue:rgb(51, 51, 204);
+body{
+    background-color: white;
+    margin: 0px;
+    
+}
+nav{
+    position: absolute;
+    color: black;
+    font-family: Nunito;
+    padding: 1px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    h3{
+        margin-left: 15px;
+    }
+
+    .hello_name{
+
+    }
+    div{   
+        display: flex;
+        width: max-content;
+        a{
+            color: black;
+            text-decoration: none;
+            margin-right: 30px;
+            font-family: Nunito;
+            font-size: 15px;
+    
+            &:hover{
+                border-bottom: $yellow solid 2px;
+                color: $yellow;
+            }
+            
+        }
+    }
+}
+.home{
+    display: flex;
+    padding: 30px;
+    background-image: url('../../public/images/fond3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .visu{ 
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 600px;
+        width: 700px;
+    }
+    
+    .login_form{
+        align-self: center;
+        width: 400px;
+        .title{
+            font-size: 50px;
+            color: $blue;
+            font-family: Nunito;
+            margin: 0px;
+        }
+        p{
+            font-family: Nunito;
+            font-size: 15px;
+            color: rgb(108, 108, 108);
+            width: 350px;
+        }
+        
+        input[type="text"] {
+            height: 40px;
+            width: 210px;
+            border-radius: 0px;
+            border: none;
+            border-bottom: solid 2px $blue;
+            font-family: Nunito;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            height: 42px;
+            border-radius: 0px;
+            border: none;
+            background-color: $yellow;
+            color: white;
+            font-weight: bold;
+            font-family: Nunito;
+            font-size: 20px;
+            border-radius: 30px;
+            float: right;
+
+        }
+        ::placeholder{
+            color: rgb(165, 165, 165);
+            font-family: Nunito;
+            font-size: 18px;
+        }
+
+        
+        
+    }
+}
+
+
+.quizz{
+    position: relative;
+    top: 50px;
+    background-image: url('../../public/images/landscape.png');
+    background-size: cover;
+    height: 100vh;
+
+    .num_question{
+        font-family: Nunito;
+        font-size: 20px;
+        margin: 0px;
+        text-align: center;
+    }
+    .question{
+        font-family: Nunito;
+        font-size: 40px;
+        margin: 0px;
+        text-align: center;
+    }
+
+    form{
+        text-align: center;
+        height: 500px;
+        
+
+        label {
+            border-radius: 0px;
+            border: none;
+            font-weight: bold;
+            font-family: Nunito;
+            font-size: 20px;
+            margin-top: 20px;
+            display:inline-block;
+            width: 40%;
+            height: 40px;
+            padding-top: 10px;
+            background-color: rgb(222, 222, 222);
+            border-radius: 100px;
+            
+            &:active{
+                background-color: $yellow;
+            }
+        }
+        
+        input[type="submit"] {
+            height: 42px;
+            margin-top: 20px;
+            border-radius: 0px;
+            border: none;
+            background-color: $blue;
+            color: white;
+            font-weight: bold;
+            font-family: Nunito;
+            font-size: 20px;
+            border-radius: 30px;
+
+        }
+
+    }
+
+    .score{
+        font-family: Nunito;
+        font-size: 120px;
+        font-weight: bold;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .buttons{
+        display: flex;
+        width: 400px;
+        justify-content: space-between;
+        margin: auto;
+
+        .save{
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            background-color: $blue;
+            color: white;
+            font-weight: bold;
+            font-family: Nunito;
+            font-size: 20px;
+            border-radius: 30px;
+            padding: 15px;
+        }
+    
+        .restart{
+            text-decoration: none;
+            margin-top: 20px;
+            border: none;
+            background-color: $yellow;
+            color: white;
+            font-weight: bold;
+            font-family: Nunito;
+            font-size: 20px;
+            border-radius: 30px;
+            padding: 15px;
+        }
+    }
+    
+}
+
+
+.progress {
+    background-color: #dddddd;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 20px;
+    border-radius: 30px;
+    padding: 6px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress .progress-bar {
+    height: 20px;
+    border-radius: 10px;
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+    width: var(width); 
+}
+
+.progress .progress-bar.bg-green {
+    width: var(width);
+
+    background-color: #7cc73e; 
+}
+
+
+
+.tableau{
+    font-family: Nunito;
+    width: 50vh;
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(237, 237, 237);
+
+    .row:nth-child(1){
+        font-weight: 20px;
+        font-weight: bold;
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px grey solid;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        
+    }
+}
