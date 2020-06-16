@@ -8,11 +8,25 @@
     <body>
         <nav>
             <h3>Quizz</h3>
+            {% if app.request.hasPreviousSession %}
+            <p>Hey {{ app.session.get('playerName') }} !</p>
+
+            <div>
+                <p><a href='/'>HOME</a></p>
+                <p><a href='/categorie'>CATÉGORIES</a></p>
+                <p><a href='#'>ADMIN</a></p>
+                <p><a href='#'>SCORE</a></p>
+                <p><a href='/deconnection'>DECONNECTION</a></p>
+            </div>
+            {% else %}
             <div>
                 <p><a href='/'>HOME</a></p>
                 <p><a href='#'>ADMIN</a></p>
-                <p><a href='scores'>SCORE</a></p>
+                <p><a href='#'>SCORE</a></p>
+                <p><a href='#'>INSCRIPTION</a></p>
+                <p><a href='#'>CONNEXION</a></p>
             </div>
+            {% endif %}
         </nav>
         
         {% block body %}{% endblock %}

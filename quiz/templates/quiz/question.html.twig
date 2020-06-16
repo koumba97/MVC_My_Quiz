@@ -1,38 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <section class='quizz'>
             <div class="progress">
-                <div class="progress-bar bg-green" style="width: <?php echo $pourcentage; ?>%;"></div>
+                <div class="progress-bar bg-green" style="width: {{ question_number }}0%;"></div>
             </div>
-            <h1 class='num_question'>Question 1 </h1>
-
+            <h1 class='num_question'>Question {{ question_number}} </h1>
+            <h1 class='num_question'>Question {{ categorie}} </h1>
             <form method='POST' action='../save_answer'>
-                <h1 class='question'>Ceci est une question ?</h1>
+                <h1 class='question'>{{ question }}</h1>
                 <textarea name='id_question' style='display:none;'>1</textarea>
 
                 <label for="one">
                     <input type='radio' id='one' value='1' name="choice"/>
-                    Choix 1
+                    {{ choixUn }}
                 </label>
 
                 <br/>
                 <label for="two">
                     <input type='radio' id='two' value='2' name="choice"/>
-                    Choix 2
+                    {{ choixDeux }}
                 </label>
 
                 <br/>
                 <label for="three">
                     <input type='radio' id='three' value='3' name="choice"/>
-                    Choix 3
-                </label>
-
-                <br/>
-                <label for='four'>
-                    <input type='radio' id='four' value='4' name="choice"/>
-                    Choix 4
+                    {{ choixTrois }}
                 </label>
 
                 <br/>

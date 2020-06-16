@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if app.request.hasPreviousSession %}
+        <section class='quizz'>
+            <div class='categories'>
+                {% for categorie in categories %}
+
+                    <a href="quiz/{{categorie[1]}}/1">
+                        <div class="categorie" style='background-image: url("{{categorie[2]}}"); background-size:cover; background-position:center;' >
+                            <h1>{{ categorie[0] }}</h1>
+                        </div>
+                    </a>
+
+                    
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

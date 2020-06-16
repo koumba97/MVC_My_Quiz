@@ -259,3 +259,43 @@ nav{
         
     }
 }
+
+.categories{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: 400px;
+    position: relative;
+    top: 50px;
+
+    .categorie{
+        background-color: $blue;
+        height: 170px;
+        width: 170px;
+        border-radius: 20px;
+        color: white;
+        font-family: Nunito;
+        padding: 20px;
+        margin: 20px;
+        transition-duration: 1s;
+        &:hover{
+            font-size: 20px;
+            box-shadow: inset 300px 0 0 0 rgba(47, 36, 255, 0.605);
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            list-style: none;
+        }
+
+        
+    }
+
+}
+
+a{
+    text-decoration: none;
+}
