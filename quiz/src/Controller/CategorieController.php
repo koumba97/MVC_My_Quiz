@@ -32,18 +32,24 @@ class CategorieController extends AbstractController
     {
         $categorieName = $this->getDoctrine()->getRepository(Categorie::Class)->findAll();
         
-        $this->session->set('playerName', $request->get('playername'));
 
+        if($request->get('playername')!== NULL){
+            $this->session->set('playerName', $request->get('playername'));
+        }
         
         $arrayCategorie=array();
         for($i=0; $i< count($categorieName); $i++){
             array_push($arrayCategorie, [$categorieName[$i]->getName(), $categorieName[$i]->getId(), $categorieName[$i]->getPicture()]);
         }
-        dump($_SESSION);
         
+        dump($this->session->all());
+        
+
         return $this->render('categorie/categories.html.twig', [
             'categories' => $arrayCategorie,
-            'session' => $_SESSION
+            
         ]);
+        
     }
+
 }

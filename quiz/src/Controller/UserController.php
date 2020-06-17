@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class UserController extends AbstractController
@@ -18,8 +19,7 @@ class UserController extends AbstractController
     /**
      * @Route("/user", name="user")
      */
-    public function index()
-    {
+    public function index(){
         return $this->render('user/index.html.twig', [
             'controller_name' => 'UserController',
         ]);
@@ -28,8 +28,9 @@ class UserController extends AbstractController
      /**
      * @Route("/deconnection", name="deconnection")
      */
-    public function deconnection(){
+    public function deconnection(Request $request){
         $this->session->clear();
+        $request->getSession()->invalidate(1);
         return $this->redirect('/');
     }
 }

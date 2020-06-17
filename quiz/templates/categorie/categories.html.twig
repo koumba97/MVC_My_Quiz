@@ -2,20 +2,21 @@
 
 
 {% block body %}
-    {% if app.request.hasPreviousSession %}
+    {% if app.session.get('playerName') %}
         <section class='quizz'>
             <div class='categories'>
                 {% for categorie in categories %}
-
-                    <a href="quiz/{{categorie[1]}}/1">
+                    <a href="quiz/{{categorie[1]}}/1/in">
                         <div class="categorie" style='background-image: url("{{categorie[2]}}"); background-size:cover; background-position:center;' >
                             <h1>{{ categorie[0] }}</h1>
                         </div>
-                    </a>
-
-                    
+                    </a>   
                 {% endfor %}
             </div>
         </section>
+    {% else %}
+        
+        {% include 'redirection.html.twig' %}
+
     {% endif %}
 {% endblock %}

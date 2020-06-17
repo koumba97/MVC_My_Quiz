@@ -1,16 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block body %}
+
+    {% if app.session.get('playerName') %}
     <section class='quizz'>
+
             <div class="progress">
-                <div class="progress-bar bg-green" style="width: {{ question_number }}0%;"></div>
+                <div class="progress-bar bg-green" style="width: {{ pourcentage }}%;"></div>
             </div>
             <h1 class='num_question'>Question {{ question_number}} </h1>
             <h1 class='num_question'>Question {{ categorie}} </h1>
-            <form method='POST' action='../save_answer'>
+            <form method='POST' action='../../../../save_answer'>
                 <h1 class='question'>{{ question }}</h1>
-                <textarea name='id_question' style='display:none;'>1</textarea>
-
+                <textarea name='id_question' style='display:none;'>{{ question_number}}</textarea>
+                <textarea name='categorie' style='display:none;'>{{ categorie }}</textarea>
+                <textarea name='id_categorie' style='display:none;'>{{ id_categorie }}</textarea>
+                
                 <label for="one">
                     <input type='radio' id='one' value='1' name="choice"/>
                     {{ choixUn }}
@@ -31,5 +36,11 @@
                 <br/>
                 <input type='submit' value='question suivante'/>
             </form>
+
     </section>
+    {% else %}
+
+        {% include 'redirection.html.twig' %}
+    
+    {% endif %}
 {% endblock %}
