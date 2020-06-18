@@ -8,8 +8,8 @@
             <div class="progress">
                 <div class="progress-bar bg-green" style="width: {{ pourcentage }}%;"></div>
             </div>
+            <h1 class='num_question categorie'> {{ categorie}} </h1>
             <h1 class='num_question'>Question {{ question_number}} </h1>
-            <h1 class='num_question'>Question {{ categorie}} </h1>
             <form method='POST' action='../../../../save_answer'>
                 <h1 class='question'>{{ question }}</h1>
                 <textarea name='id_question' style='display:none;'>{{ question_number}}</textarea>

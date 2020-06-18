@@ -31,6 +31,7 @@ class QuestionController extends AbstractController
      * @Route("/", name="home")
      */
     public function home(){
+        dump($this->session);
         return $this->render('quiz/home.html.twig');
     }
 
@@ -45,10 +46,10 @@ class QuestionController extends AbstractController
             ?>
            <div class='fond'></div>
             <div class='pop'>
-                <p>Tu es sur le point de changer de catégorie. Si tu changes de catégorie, ton avancé sur le quiz <span><?php echo $categorieName; ?></span> sera perdu</p>
+                <p>Tu es sur le point de changer de catégorie. <br/>Si tu changes de catégorie, ton avancé sur le quiz <span><?php echo $categorieName; ?></span> sera perdu !</p>
                 <div class='buttons'>
-                    <div class='button'>Finir ma partie</div> 
-                    <div class='button'>Abandonner</div>
+                    <a href='../in/'><div class='button'>Finir ma partie</div></a>
+                    <a href='../../../../categorie'><div class='button'>Abandonner</div></a>
                 </div>
             </div>
             <?php
@@ -67,7 +68,7 @@ class QuestionController extends AbstractController
         }
         else if ($id>10){
             // s'il  n'y a plus de question
-            return $this->redirect('../../quiz/score');
+            return $this->redirect('../../score');
         }
         else if ($id>9 && $categorie == 11){
             // s'il  n'y a plus de question dans la catégorie 'sigle info'
@@ -140,32 +141,37 @@ class QuestionController extends AbstractController
     }
 
      /**
-     * @Route("/quiz/score", name="score")
+     * @Route("/quiz/{categorie}/score", name="score")
      */
-    public function score(Request $request){
-        return $this->render('quiz/score.html.twig');
+    public function score(Request $request, $categorie){
+
+        dump($this->session->all());
+        $good_answers=array();
+        for($i=1; $i<11; $i++){
+            if ($i == 10){
+
+                $i = 0;
+                $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie-1).$i, 'reponse_expected' => 1 ]);
+                array_push($good_answers, $reponseId->getReponseExpected());
+                break;                
+            }
+            $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie-1).$i, 'reponse_expected' => 1 ]);
+            array_push($good_answers, $reponseId->getReponseExpected());
+        }
+
+        $result=0; $y=1;
+        for($i=0; $i<count($good_answers); $i++){
+
+            if ($this->session->get($y) == $good_answers[$i]){
+                $result++;
+            }
+            $y++;
+        }
+
+        $note = "$result/10";
+        return $this->render('quiz/score.html.twig', [
+            'note' => $note,
+        ]);
     }
-
-}
-
-
-if (isset($_POST['change'])){
-    ?>
-    <style>
-        .popup{
-            display:block;
-        }
-    </style>
-    <?php
-
-}
-else{
-    ?>
-    <style>
-        .popup{
-            display:none;
-        }
-    </style>
-    <?php
 
 }

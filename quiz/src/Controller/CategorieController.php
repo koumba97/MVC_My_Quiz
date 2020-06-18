@@ -41,6 +41,12 @@ class CategorieController extends AbstractController
         for($i=0; $i< count($categorieName); $i++){
             array_push($arrayCategorie, [$categorieName[$i]->getName(), $categorieName[$i]->getId(), $categorieName[$i]->getPicture()]);
         }
+
+        $this->session->remove("categorie");
+        for($i=1; $i<=10; $i++){
+            $this->session->remove($i);
+        }
+        $this->session->remove("categorie");
         
         dump($this->session->all());
         

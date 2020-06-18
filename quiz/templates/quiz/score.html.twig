@@ -1,5 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>SCORE</h1>
+    <section class="end_quiz">
+        <div class="contents">
+            <h1>SCORE</h1>
+            <p class="note">{{ note }}</p>
+
+            <div class='buttons'>
+                <a href='../in/'><div class='button'>Sauvegarder</div></a>
+                <a href='../../../../categorie'><div class='button'>Recommencer</div></a>
+            </div>
+        </div>
+    </section>
 {% endblock %}
