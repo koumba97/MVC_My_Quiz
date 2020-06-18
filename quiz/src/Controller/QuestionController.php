@@ -40,7 +40,6 @@ class QuestionController extends AbstractController
      */
     public function index(Request $request, $categorie, $id, $change, SessionInterface $session ) : Response
     {
-
         $categorieName = $this->getDoctrine()->getRepository(Categorie::Class)->findOneBy(['id' => $categorie])->getName();
         if ($change == "out"){
             ?>

@@ -32,7 +32,7 @@ class CategorieController extends AbstractController
     {
         $categorieName = $this->getDoctrine()->getRepository(Categorie::Class)->findAll();
         
-
+        dump($categorieName);
         if($request->get('playername')!== NULL){
             $this->session->set('playerName', $request->get('playername'));
         }

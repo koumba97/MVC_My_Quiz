@@ -6,16 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class SecurityController extends AbstractController
 {
-
-    private $session;
-
-    public function __construct(SessionInterface $session){
-        $this->session = $session;
-    }
     /**
      * @Route("/login", name="app_login")
      */
@@ -38,8 +31,6 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {
-
-        $this->session->clear();
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }

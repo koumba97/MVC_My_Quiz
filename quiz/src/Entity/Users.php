@@ -5,13 +5,14 @@ namespace App\Entity;
 use App\Repository\UsersRepository;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UsersRepository::class)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class Users implements UserInterface
+class Users implements UserInterface, UserProviderInterface
 {
     /**
      * @ORM\Id()
@@ -99,5 +100,28 @@ class Users implements UserInterface
         $this->isVerified = $isVerified;
 
         return $this;
+    }
+
+    public function loadUserByUsername($username)
+    {
+        return $this->fetchUser($username);
+    }
+
+    public function refreshUser(UserInterface $user)
+    {
+        if (!$user instanceof WebserviceUser) {
+            throw new UnsupportedUserException(
+                sprintf('Instances of "%s" are not supported.', get_class($user))
+            );
+        }
+
+        $username = $user->getUsername();
+
+        return $this->fetchUser($username);
+    }
+
+    public function supportsClass($class)
+    {
+        return WebserviceUser::class === $class;
     }
 }
