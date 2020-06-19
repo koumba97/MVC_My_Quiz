@@ -6,7 +6,6 @@ body{
     
 }
 nav{
-    position: absolute;
     color: black;
     font-family: Nunito;
     padding: 1px;
@@ -14,6 +13,7 @@ nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 50px;
 
     h3{
         margin-left: 15px;
@@ -107,8 +107,7 @@ nav{
 
 
 .quizz{
-    position: relative;
-    top: 50px;
+
     background-image: url('../../public/images/landscape.png');
     background-size: cover;
     height: 100vh;
@@ -126,7 +125,7 @@ nav{
     }
     .question{
         font-family: Nunito;
-        font-size: 40px;
+        font-size: 30px;
         margin: 0px;
         text-align: center;
     }
@@ -283,8 +282,6 @@ nav{
     flex-wrap: wrap;
     overflow: scroll;
     height: 400px;
-    position: relative;
-    top: 50px;
 
     .categorie{
         background-color: $blue;
@@ -318,8 +315,6 @@ a{
 
 .redirect_connection{
 
-    position: relative;
-    top: 50px;
     background-image: url('../../public/images/fond4.png');
     background-size: cover;
     height: 100vh;
@@ -375,8 +370,8 @@ a{
     height: 330px;
     top: 40%;
     left: 50%;
-    margin-top: -100px; /* Negative half of height. */
-    margin-left: -250px; /* Negative half of width. */
+    margin-top: -100px;
+    margin-left: -250px;
     overflow: unset;
     background-image: url('../../public/images/decision.png');;
     background-size: 25%;
@@ -429,8 +424,6 @@ a{
 
 
 .end_quiz{
-    position: relative;
-    top: 50px;
     background-image: url('../../public/images/landscape.png');
     background-size: cover;
     height: 100vh;
@@ -438,22 +431,35 @@ a{
     .contents{
         margin: auto;
         font-family: Nunito;
-        width: 500px;
+        background-color: rgb(245, 245, 245);
+        border-radius: 20px;
+        width: 400px;
         text-align: center;
         position: relative;
-        top: 100px;
+        top: 50px;
 
-        h1{
-            font-size: 40px;
+        .categorie_name{
+            font-size: 20px;
+            margin: 0px;
+            padding: 5px;
         }
         .note{
-            font-size: 70px;
+            font-size: 50px;
+            margin: 5px;
+            margin-bottom: 20px;
         }
 
+        .img{
+            height: 230px;
+        }
         .buttons{
             display: flex;
             justify-content: space-between;
+            width: 260px;
+            margin: auto;
             bottom: 10px;
+            position: relative;
+            bottom: 20px;
     
             a{
                 text-decoration: none;
@@ -464,9 +470,9 @@ a{
                 color: white;
                 font-weight: bold;
                 font-family: Nunito;
-                font-size: 20px;
+                font-size: 15px;
                 border-radius: 30px;
-                padding: 15px;
+                padding: 10px;
             }
     
             a:nth-child(1){

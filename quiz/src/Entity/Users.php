@@ -37,6 +37,11 @@ class Users implements UserInterface, UserProviderInterface
     private $username;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $fonction;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
@@ -66,12 +71,27 @@ class Users implements UserInterface, UserProviderInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
         return $this;
     }
 
     public function getUsername(){
         return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    public function getFonction(){
+        return $this->fonction;
+    }
+
+    public function setFonction(string $username): self
+    {
+        $this->fonction = $fonction;
+        return $this;
     }
 
     public function getRoles()

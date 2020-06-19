@@ -2,7 +2,7 @@
 
 
 {% block body %}
-    {% if app.session.get('playerName') %}
+    {% if app.session.get('playerName') or app.user %}
         <section class='quizz'>
             <div class='categories'>
                 {% for categorie in categories %}

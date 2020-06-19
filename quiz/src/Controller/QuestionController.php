@@ -150,7 +150,7 @@ class QuestionController extends AbstractController
             if ($i == 10){
 
                 $i = 0;
-                $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie-1).$i, 'reponse_expected' => 1 ]);
+                $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie).$i, 'reponse_expected' => 1 ]);
                 array_push($good_answers, $reponseId->getReponseExpected());
                 break;                
             }
@@ -167,9 +167,16 @@ class QuestionController extends AbstractController
             $y++;
         }
 
+        $categorieDetails = $this->getDoctrine()->getRepository(Categorie::Class)->findAll()[$categorie-1];
+        $image = $categorieDetails->getPicture();
+        $name = $categorieDetails->getName();
+       
+
         $note = "$result/10";
         return $this->render('quiz/score.html.twig', [
             'note' => $note,
+            'categorie' => $name,
+            'image' => $image
         ]);
     }
 

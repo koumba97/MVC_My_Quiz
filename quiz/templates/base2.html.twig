@@ -8,24 +8,38 @@
     <body>
         <nav>
             <h3>Quizz</h3>
-            {% if app.session.get('playerName') %}
-            <p>Hey {{ app.session.get('playerName') }} !</p>
 
-            <div>
-                <p><a href='/'>HOME</a></p>
-                <p><a href='../out'>CATÉGORIES</a></p>
-                <p><a href='#'>ADMIN</a></p>
-                <p><a href='#'>SCORE</a></p>
-                <p><a href='/logout'>DECONNECTION</a></p>
-            </div>
+            {# si joueur invité #}
+            {% if app.session.get('playerName') %}
+                <p>Hey {{ app.session.get('playerName') }} !</p>
+
+                <div>
+                    <p><a href='../out'>CATÉGORIES</a></p>
+                    <p><a href='#'>SCORE</a></p>
+                    <p><a href='/logout'>DECONNECTION</a></p>
+                </div>
+
+            {# si joueur connecté #}
+            {% elseif app.user %}
+            
+                <p>Hey {{ app.user.username }} !</p>
+
+                <div>
+                    <p><a href='/profile'>PROFILE</a></p>
+                    <p><a href='../out'>CATÉGORIES</a></p>
+                    <p><a href='#'>SCORE</a></p>
+                    <p><a href='/logout'>DECONNECTION</a></p>
+                </div>
+            
+            {# si joueur non connecté #}
             {% else %}
-            <div>
-                <p><a href='/'>HOME</a></p>
-                <p><a href='#'>ADMIN</a></p>
-                <p><a href='#'>SCORE</a></p>
-                <p><a href='/register'>INSCRIPTION</a></p>
-                <p><a href='/login'>CONNEXION</a></p>
-            </div>
+                <div>
+                    <p><a href='/'>HOME</a></p>
+                    <p><a href='#'>ADMIN</a></p>
+                    <p><a href='#'>SCORE</a></p>
+                    <p><a href='/register'>INSCRIPTION</a></p>
+                    <p><a href='/login'>CONNEXION</a></p>
+                </div>
             {% endif %}
         </nav>
         
