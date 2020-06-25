@@ -139,45 +139,53 @@ class QuestionController extends AbstractController
         
     }
 
-     /**
-     * @Route("/quiz/{categorie}/score", name="score")
-     */
-    public function score(Request $request, $categorie){
+    //  /**
+    //  * @Route("/quiz/{categorie}/score", name="score")
+    //  */
+    // public function score(Request $request, $categorie){
 
-        dump($this->session->all());
-        $good_answers=array();
-        for($i=1; $i<11; $i++){
-            if ($i == 10){
+    //     dump($this->session->all());
+    //     $good_answers=array();
+    //     for($i=1; $i<11; $i++){
+    //         if ($i == 10){
 
-                $i = 0;
-                $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie).$i, 'reponse_expected' => 1 ]);
-                array_push($good_answers, $reponseId->getReponseExpected());
-                break;                
-            }
-            $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie-1).$i, 'reponse_expected' => 1 ]);
-            array_push($good_answers, $reponseId->getReponseExpected());
-        }
+    //             $i = 0;
+    //             $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie).$i, 'reponse_expected' => 1 ]);
+    //             array_push($good_answers, $reponseId->getReponseExpected());
+    //             break;                
+    //         }
+    //         $reponseId = $this->getDoctrine()->getRepository(Reponse::Class)->findOneBy(['id_question' => ($categorie-1).$i, 'reponse_expected' => 1 ]);
+    //         array_push($good_answers, $reponseId->getReponseExpected());
+    //     }
 
-        $result=0; $y=1;
-        for($i=0; $i<count($good_answers); $i++){
+    //     $result=0; $y=1;
+    //     for($i=0; $i<count($good_answers); $i++){
 
-            if ($this->session->get($y) == $good_answers[$i]){
-                $result++;
-            }
-            $y++;
-        }
+    //         if ($this->session->get($y) == $good_answers[$i]){
+    //             $result++;
+    //         }
+    //         $y++;
+    //     }
 
-        $categorieDetails = $this->getDoctrine()->getRepository(Categorie::Class)->findAll()[$categorie-1];
-        $image = $categorieDetails->getPicture();
-        $name = $categorieDetails->getName();
-       
+    //     $categorieDetails = $this->getDoctrine()->getRepository(Categorie::Class)->findAll()[$categorie-1];
+    //     $image = $categorieDetails->getPicture();
+    //     $name = $categorieDetails->getName();
+        
+    //     $note = "$result/10";
 
-        $note = "$result/10";
-        return $this->render('quiz/score.html.twig', [
-            'note' => $note,
-            'categorie' => $name,
-            'image' => $image
-        ]);
-    }
+
+    //     $this->session->set("score", $note);
+    //     $this->session->set("categorie_id", $categorie);
+    //     return $this->render('quiz/score.html.twig', [
+    //         'note' => $note,
+    //         'categorie' => $name,
+    //         'image' => $image
+    //     ]);
+    // }
+
+    
+    
+  
+
 
 }

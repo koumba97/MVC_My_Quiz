@@ -3,7 +3,7 @@
 {% block body %}
 
     {% if app.session.get('playerName') or app.user %}
-    <section class='quizz'>
+    <section class='quizz' style="background-image:url('{{ asset('images/landscape.png') }}'); height:700px;">
 
             <div class="progress">
                 <div class="progress-bar bg-green" style="width: {{ pourcentage }}%;"></div>
@@ -36,7 +36,6 @@
                 <br/>
                 <input type='submit' value='question suivante'/>
             </form>
-
     </section>
     {% else %}
 

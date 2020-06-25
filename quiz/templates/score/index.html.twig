@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if app.session.get('playerName') or app.user %}
+        <section class='score'>
+           <h1>TABLEAU DES SCORES</h1>
+            
+            
+            <div class='tableau'>
+                <div class='row'>
+                    <div class='playername'>
+                        PLAYERNAME
+                    </div>
+
+                    <div class='scores'>
+                        SCORE
+                    </div>
+
+                    <div class='date'>
+                        DATE
+                    </div>
+                </div>
+                {# @foreach ($allscores as $data) #}
+                <div class='row'>
+                    <div class='playername'>
+                        playername
+                    </div>
+
+                    <div class='scores'>
+                        score
+                    </div>
+
+                    <div class='date'>
+                        00/00/00
+                    </div>
+                </div>
+                {# @endforeach #}
+            </div>
+
+        </section>
+    {% else %}
+        {% include 'redirection.html.twig' %}
+    {% endif %}
+{% endblock %}

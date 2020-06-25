@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}hey!{% endblock %}</title>
+        <title>{% block title %}My Quiz{% endblock %}</title>
         {% block stylesheets %} {{ encore_entry_link_tags('style') }}{% endblock %}
     </head>
     <body>
         <nav>
-            <h3>Quizz</h3>
+            <h3>My Quiz</h3>
 
             {# si joueur invité #}
             {% if app.session.get('playerName') %}
@@ -15,7 +15,7 @@
 
                 <div>
                     <p><a href='/categorie'>CATÉGORIES</a></p>
-                    <p><a href='#'>SCORE</a></p>
+                    <p><a href='/score'>SCORE</a></p>
                     <p><a href='/logout'>DECONNECTION</a></p>
                 </div>
 
@@ -27,7 +27,7 @@
                 <div>
                     <p><a href='/profile'>PROFILE</a></p>
                     <p><a href='/categorie'>CATÉGORIES</a></p>
-                    <p><a href='#'>SCORE</a></p>
+                    <p><a href='/score'>SCORE</a></p>
                     <p><a href='/logout'>DECONNECTION</a></p>
                 </div>
             
@@ -36,7 +36,7 @@
                 <div>
                     <p><a href='/'>HOME</a></p>
                     <p><a href='#'>ADMIN</a></p>
-                    <p><a href='#'>SCORE</a></p>
+                    <p><a href='/score'>SCORE</a></p>
                     <p><a href='/register'>INSCRIPTION</a></p>
                     <p><a href='/login'>CONNEXION</a></p>
                 </div>
