@@ -28,7 +28,7 @@ class Score
     private $playername;
 
     /**
-     * @ORM\Column(type="string", length=55)
+     * @ORM\Column(type="integer")
      */
     private $score;
 
@@ -36,6 +36,11 @@ class Score
      * @ORM\Column(type="integer")
      */
     private $categorie;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $categorie_name;
 
     /**
      * @ORM\Column(type="datetime")
@@ -76,7 +81,7 @@ class Score
         return $this->score;
     }
 
-    public function setScore(string $score): self
+    public function setScore(int $score): self
     {
         $this->score = $score;
 
@@ -91,6 +96,18 @@ class Score
     public function setCategorie(int $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getCategorieName(): ?string
+    {
+        return $this->categorie_name;
+    }
+
+    public function setCategorieName(string $categorie_name): self
+    {
+        $this->categorie_name = $categorie_name;
 
         return $this;
     }

@@ -90,7 +90,8 @@ class QuestionController extends AbstractController
         dump($this->session->all());
 
         $reponses = $this->getDoctrine()->getRepository(Reponse::Class)->findBy(['id_question' => $dizaine.$unite ]);
-
+        $reponse2 = new Reponse();
+    
         $choix1 = $reponses[0]->getReponse();
         $choix2 = $reponses[1]->getReponse();
         $choix3 = $reponses[2]->getReponse();

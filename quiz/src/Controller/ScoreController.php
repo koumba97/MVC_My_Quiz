@@ -37,8 +37,10 @@ class ScoreController extends AbstractController
      */
     public function index()
     {
+        $scores = $this->repository->findAll();
+        dump($scores);
         return $this->render('score/index.html.twig', [
-            'controller_name' => 'ScoreController',
+            'scores' => $scores
         ]);
     }
 
@@ -110,16 +112,18 @@ class ScoreController extends AbstractController
 
         $entityManager = $this->getDoctrine()->getManager();
 
-
+        $categorie_name = $this->session->get('categorie');
         $categorie = $this->session->get('categorie_id');
         $note = $this->session->get('score');
-
-        dump($note);
+        $note = substr($note, 0, -3 );
+        dump($categorie_name);
+    
         $score = new Score();
         $score->setPlayerRole($player_role);
         $score->setPlayername($playername);
         $score->setScore($note);
         $score->setCategorie($categorie);
+        $score->setCategorieName($categorie_name);
         $score->setDate(new \DateTime());
 
         $entityManager->persist($score);

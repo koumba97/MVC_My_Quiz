@@ -21,21 +21,28 @@
                         DATE
                     </div>
                 </div>
-                {# @foreach ($allscores as $data) #}
+                {% for result in scores %}
                 <div class='row'>
                     <div class='playername'>
-                        playername
+                        
+                        {{result.playername}}
                     </div>
 
                     <div class='scores'>
-                        score
+                    <a href="quiz/{{result.categorie}}/1/in" class="categorie">{{result.categorieName}}</a><br>
+                        {{result.score}}/10
                     </div>
 
-                    <div class='date'>
-                        00/00/00
+                    <div class='datetime'>
+                        {% set day = result.date.date|slice(8, 2) %}
+                        {% set month = result.date.date|slice(5, 2) %}
+                        {% set year = result.date.date|slice(0, 4) %}
+                        {% set hour = result.date.date|slice(10, 9) %}
+                        {{day}}/{{month}}/{{year}} <br> à {{hour}}
+                        
                     </div>
                 </div>
-                {# @endforeach #}
+                {% endfor %}
             </div>
 
         </section>

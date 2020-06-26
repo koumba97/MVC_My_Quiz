@@ -1,20 +1,217 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfileController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="profile">
+    <div>
+        <div class="profile_picture">
+        </div>
+        <div>
+            <h1>Edition du profil</h1>
+            <label for="mail">e-mail :
+            <input type="email" name="mail" placeholder="e-mail" id="mail"></label><br>
+            <label for="mail">name :
+            <input type="text" name="name" placeholder="name" id="name"></label><br>
+            <label for="password">password :
+            <input type="password" name="password" placeholder="password" id="password"></label><br>
+        </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <div>
+            <h1>Créer un quiz</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/Sites/MVC_My_Quiz/quiz/src/Controller/ProfileController.php'|file_link(0) }}">src/Controller/ProfileController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/Sites/MVC_My_Quiz/quiz/templates/profile/index.html.twig'|file_link(0) }}">templates/profile/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <div class="create">
+                <textarea>question 1</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 2</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 3</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 4</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 5</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 6</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 7</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 8</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 9</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+            <div class="create">
+                <textarea>question 10</textarea>
+                <label for="choice1">1
+                    <input type="text" name="choice1" id="choice1">
+                </label>
+                <label for="choice2">2
+                    <input type="text" name="choice2" id="choice2">
+                </label>
+                <label for="choice3">3
+                    <input type="text" name="choice3" id="choice3">
+                </label>
+
+                <select name="reponse">
+                    <option value="1" name="1">1</option>
+                    <option value="2" name="2">2</option>
+                    <option value="3" name="3">3</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
 {% endblock %}

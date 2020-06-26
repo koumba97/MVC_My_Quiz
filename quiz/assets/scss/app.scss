@@ -282,6 +282,31 @@ nav{
         padding-top: 10px;
         
     }
+
+    .date{
+        width: 100%;
+        text-align: center;
+    }
+    .datetime{
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .scores{
+        width: 100%;
+        text-align: center;
+
+        .categorie{
+            margin: 0px;
+            font-size: 12px;
+        }
+    }
+
+    .playername{
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .end{
@@ -574,4 +599,21 @@ a{
         font-family: Nunito;
         text-align: center;
     }
+}
+
+.profile{
+    //background-image: url('../../public/images/landscape.png');
+    background-size: cover;
+    height: 70vh;
+    padding: 30px;
+
+    .profile_picture{
+        background-image: url('../../public/images/blank.png');
+        background-size: cover;
+        height: 200px;
+        width: 200px;
+        background-size: 110%;
+        border-radius: 100px;
+    }
+
 }

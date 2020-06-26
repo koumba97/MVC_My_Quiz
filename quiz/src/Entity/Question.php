@@ -27,6 +27,11 @@ class Question
      */
     private $question;
 
+    /**
+    * @ORM\OneToMany(targetEntity=Reponse::class, cascade={"persist", "remove"}, mappedBy="question")
+    */
+    protected $reponse;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,5 +59,16 @@ class Question
         $this->question = $question;
 
         return $this;
+    }
+
+    public function getReponse()
+    {
+        return $this->reponse;
+    }
+     
+    public function addReponse(Reponse $reponse)
+    {
+        $this->reponse->add($reponse);
+        $reponse->setQuestion($this);
     }
 }

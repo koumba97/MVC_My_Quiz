@@ -32,6 +32,11 @@ class Reponse
      */
     private $reponse_expected;
 
+    /**
+    * @ORM\ManyToOne(targetEntity=Question::class)
+    */
+    protected $question;
+    
     public function getId(): ?int
     {
         return $this->id;
