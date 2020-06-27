@@ -140,6 +140,14 @@ class QuestionController extends AbstractController
         
     }
 
+     /**
+     * @Route("/create", name="create")
+     */
+    public function create(){
+        dump($this->session);
+        return $this->render('quiz/create.html.twig');
+    }
+
     //  /**
     //  * @Route("/quiz/{categorie}/score", name="score")
     //  */

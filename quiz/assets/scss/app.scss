@@ -1,10 +1,11 @@
 $yellow:rgb(255, 199, 31);
 $blue:rgb(51, 51, 204);
 $grey: rgb(228, 228, 228);
+
 body{
     background-color: white;
     margin: 0px;
-    
+    font-family: Nunito;
 }
 nav{
     color: black;
@@ -604,16 +605,205 @@ a{
 .profile{
     //background-image: url('../../public/images/landscape.png');
     background-size: cover;
-    height: 70vh;
+    background-color:rgb(239, 239, 239);
+    height: 80vh;
     padding: 30px;
+    display: flex;
 
-    .profile_picture{
-        background-image: url('../../public/images/blank.png');
-        background-size: cover;
-        height: 200px;
-        width: 200px;
-        background-size: 110%;
-        border-radius: 100px;
+    .show_profile{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: white;
+        margin-right: 20px;
+
+        h1{
+            border: solid;
+            width: max-content;
+        }
+        .profile_picture{
+            background-image: url('../../public/images/blank.png');
+            background-size: cover;
+            background-position: right -10px top 10px;
+            height: 200px;
+            width: 200px;
+            background-size: 110%;
+            border-radius: 10px;
+            
+        }
+
+        input[type="text"] {
+            float: right;
+        }
+
+        .edit_button{
+            background-color: rgb(214, 227, 255);
+            border-radius: 5px;
+            padding: 2px;
+        }
+    }
+
+    .historique{
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+        height: 300px;
+        .all{
+            overflow: scroll;
+            height: 200px;
+            .quiz{
+
+                display: flex;
+                transition-duration: 1s;
+    
+                &:hover{
+    
+                    background-color: rgb(183, 226, 249);
+                    .quiz_picture{
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
+
+        .categorie{
+            color: black;
+        }
+        .quiz_picture{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(51, 51, 204);
+            margin-right: 10px;
+            transition-duration: 1s;
+        }
+
+        .quiz_score{
+            font-size: 20px;
+            position: relative;
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-right: 10px;
+           
+        }
+
+        .quiz_date{
+            font-size: 10px;
+            padding-top: 10px;
+        }
+    }
+
+    .section2{
+        width: 40%;
+        padding: 10px;
+        height: 300px;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .section3{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        height: 300px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+   
+
+}
+
+
+.create{
+    background-size: cover;
+    background-color:rgb(239, 239, 239);
+    padding: 30px;
+    display: flex;
+    height: 900px;
+    .create_quiz{
+        padding-top: 20px;
+        width: 100%;
+        #questions{ 
+            overflow: scroll;
+            padding-left: 20px;
+            width: 50%;
+            background-color: white;
+            border-radius: 10px;
+            height: 80vh;
+            textarea{
+                width: 90%;
+                margin: 10px;
+                margin-bottom: 0px;
+                border-radius: 5px;
+                border: none;
+                color: white;
+            }
+
+            h5{
+                margin: 0px;
+            }
+            p{
+                margin: 0px;
+                line-height: normal;
+                font-family: Nunito;
+            }
+
+            a{
+                font-size: 12px;
+                color: rgb(79, 79, 79);
+            }
+         
+            .button{
+                font-family: Nunito;
+                padding: 10px;
+                line-height: 5px;
+                //margin-bottom: 10px;
+                width: 90%;
+                border-bottom: solid rgb(198, 198, 198) 1px;
+        
+            }
+            .titre{
+                padding-left: 10px;
+            }
+
+            select{
+                position: relative;
+                bottom: 35px;
+                left: 100px;
+                width: 30%;
+            }
+            .choices{
+                padding: 10px;
+                .choice{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    line-height: normal;
+                    input[type="text"] {
+                        width: 90%;
+                        height: 20px;
+                        float: right;
+                        border: none;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            .expandable {
+              background: rgb(232, 234, 244);
+              width: 90%;
+              overflow: hidden;
+              color: #000;   
+              line-height: 50px;
+              margin-bottom: 30px;
+              transition: all .5s ease-in-out;
+              height: 240px;
+              border-bottom-left-radius: 20px;
+              border-bottom-right-radius: 20px;
+            }
+          
+        } 
+        
+       
     }
 
 }
+

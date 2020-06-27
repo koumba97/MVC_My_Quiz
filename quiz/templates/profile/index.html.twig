@@ -2,216 +2,117 @@
 
 {% block body %}
 <section class="profile">
-    <div>
-        <div class="profile_picture">
+    
+    <div class="show_profile">
+        <h3> Hey {{app.user.username}}</h3>
+        <div class="profile_picture"></div>
+
+        <label for="file">
+        <i class="fas fa-camera"></i>
+        </label>
+        <input style="display:none;" type="file" name="file" id="file">
+        </br></br>
+        <form action="update_profile" method="POST">
+            <label for="mail">E-mail :</label></br>
+            <input type="email" name="email" placeholder="e-mail" value="{{app.user.email}}" id="mail"></br></br>
+            
+            <label for="mail">Name :</label></br>
+            <input  name="username" placeholder="name" id="name" value="{{app.user.username}}"></br></br>
+
+            <label for="password">Password :</label></br>
+            <input type="password" name="password" placeholder="password" id="password"><br><br>
+            
+            <input type="submit" name="submit" id="submit" style="display:none;" value="Editer mon profil">
+            <label for="submit" class="edit_button"> Editer mon profil <i class="fas fa-edit"></i></label>
+        </form>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; flex-direction:column; width:100%">
+        <div style="display:flex; justify-content:space-between; width:100%;">
+            <div class="historique">
+                <h4>Mon historique</h4>
+
+                <div class="all">
+                    <div class="quiz">
+                        <div class="quiz_picture"></div>
+                        <div style="display:flex;">
+                            <div>
+                                <a href="" class="quiz_name">Categorie quiz name here</a>
+                                <div class="quiz_date">Le 00/00/00 à 00:00</div>
+                            </div>
+                            <div class="quiz_score">10/10</div>
+                        </div>
+                    </div>
+
+                    <div class="quiz">
+                        <div class="quiz_picture"></div>
+                        <div style="display:flex;">
+                            <div>
+                                <a href="" class="quiz_name">Categorie quiz name here</a>
+                                <div class="quiz_date">Le 00/00/00 à 00:00</div>
+                            </div>
+                            <div class="quiz_score">10/10</div>
+                        </div>
+                    </div>
+
+                    <div class="quiz">
+                        <div class="quiz_picture"></div>
+                        <div style="display:flex;">
+                            <div>
+                                <a href="" class="quiz_name">Categorie quiz name here</a>
+                                <div class="quiz_date">Le 00/00/00 à 00:00</div>
+                            </div>
+                            <div class="quiz_score">10/10</div>
+                        </div>
+                    </div>
+
+                    <div class="quiz">
+                        <div class="quiz_picture"></div>
+                        <div style="display:flex;">
+                            <div>
+                                <a href="" class="quiz_name">Categorie quiz name here</a>
+                                <div class="quiz_date">Le 00/00/00 à 00:00</div>
+                            </div>
+                            <div class="quiz_score">10/10</div>
+                        </div>
+                    </div>
+
+                    <div class="quiz">
+                        <div class="quiz_picture"></div>
+                        <div style="display:flex;">
+                            <div>
+                                <a href="" class="quiz_name">Categorie quiz name here</a>
+                                <div class="quiz_date">Le 00/00/00 à 00:00</div>
+                            </div>
+                            <div class="quiz_score">10/10</div>
+                        </div>
+                    </div>
+
+                    <div class="quiz">
+                        <div class="quiz_picture"></div>
+                        <div style="display:flex;">
+                            <div>
+                                <a href="" class="quiz_name">Categorie quiz name here</a>
+                                <div class="quiz_date">Le 00/00/00 à 00:00</div>
+                            </div>
+                            <div class="quiz_score">10/10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section2">
+                <a href="create">Créer un quiz</a>
+            </div>
+            
         </div>
-        <div>
-            <h1>Edition du profil</h1>
-            <label for="mail">e-mail :
-            <input type="email" name="mail" placeholder="e-mail" id="mail"></label><br>
-            <label for="mail">name :
-            <input type="text" name="name" placeholder="name" id="name"></label><br>
-            <label for="password">password :
-            <input type="password" name="password" placeholder="password" id="password"></label><br>
-        </div>
 
-        <div>
-            <h1>Créer un quiz</h1>
-
-            <div class="create">
-                <textarea>question 1</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 2</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 3</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 4</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 5</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 6</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 7</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 8</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 9</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
-            <div class="create">
-                <textarea>question 10</textarea>
-                <label for="choice1">1
-                    <input type="text" name="choice1" id="choice1">
-                </label>
-                <label for="choice2">2
-                    <input type="text" name="choice2" id="choice2">
-                </label>
-                <label for="choice3">3
-                    <input type="text" name="choice3" id="choice3">
-                </label>
-
-                <select name="reponse">
-                    <option value="1" name="1">1</option>
-                    <option value="2" name="2">2</option>
-                    <option value="3" name="3">3</option>
-                </select>
-            </div>
-
+        <div class="section3">
+            <h4>Categories</h4>
         </div>
     </div>
 
 
 </section>
-
+<script src="https://kit.fontawesome.com/9b58f0fd79.js" crossorigin="anonymous"></script>
 {% endblock %}

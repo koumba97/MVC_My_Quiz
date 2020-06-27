@@ -1,0 +1,340 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<section class="create">
+ <div class="create_quiz">
+
+    <h1>Créer un quiz</h1>
+    <form id="questions">
+        <input type="text" name="categorie" id="categorie" placeholder="categorie">
+        {# QUESTION 1 #}
+        <div class="button"><a href="#nav">Question 1</a></div>
+        <div class="expandable" id="nav">
+            <textarea name="question1" placeholder="Question 1"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1">1 .</label>
+                    <input type="text" name="choice1_question1" id="choice1_question1">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2">2 .</label>
+                    <input type="text" name="choice2_question1" id="choice2_question1">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3">3 .</label>
+                    <input type="text" name="choice3_question1" id="choice3_question1">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+        {# QUESTION 2 #}
+        <div class="button"><a href="#nav2">Question 2</a></div>
+        <div class="expandable" id="nav2">
+            <textarea name="question2" placeholder="Question 2" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question2">1 .</label>
+                    <input type="text" name="choice1_question2" id="choice1_question2" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question2">2 .</label>
+                    <input type="text" name="choice2_question2" id="choice2_question2" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question2">3 .</label>
+                    <input type="text" name="choice3_question2" id="choice3_question2" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+
+        {# QUESTION 3 #}
+        <div class="button"><a href="#nav3">Question 3</a></div>
+        <div class="expandable" id="nav3">
+            <textarea name="question3" placeholder="Question 3" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question3">1 .</label>
+                    <input type="text" name="choice1_question3" id="choice1_question3" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question3">2 .</label>
+                    <input type="text" name="choice2_question3" id="choice2_question3" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question3">3 .</label>
+                    <input type="text" name="choice3_question3" id="choice3_question3" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+        {# QUESTION 4 #}
+        <div class="button"><a href="#nav4">Question 4</a></div>
+        <div class="expandable" id="nav4">
+            <textarea name="question4" placeholder="Question 4" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question4">1 .</label>
+                    <input type="text" name="choice1_question4" id="choice1_question4" required="required">
+                </div>
+
+                 <div class="choice">
+                    <label for="choice2_question4">2 .</label>
+                    <input type="text" name="choice2_question4" id="choice2_question4" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question4">3 .</label>
+                    <input type="text" name="choice3_question4" id="choice3_question4" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question4">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+        {# QUESTION 5 #}
+        <div class="button"><a href="#nav5">Question 5</a></div>
+        <div class="expandable" id="nav5">
+            <textarea name="question5" placeholder="Question 5" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question5">1 .</label>
+                    <input type="text" name="choice1_question5" id="choice1_question5" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question5">2 .</label>
+                    <input type="text" name="choice2_question5" id="choice2_question5" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question5">3 .</label>
+                    <input type="text" name="choice3_question5" id="choice3_question5" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question5">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+
+        {# QUESTION 6 #}
+        <div class="button"><a href="#nav6">Question 6</a></div>
+        <div class="expandable" id="nav6">
+            <textarea name="question6" placeholder="Question 6" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question6">1 .</label>
+                    <input type="text" name="choice1_question6" id="choice1_question6" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question6">2 .</label>
+                    <input type="text" name="choice2_question6" id="choice2_question6" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question6">3 .</label>
+                    <input type="text" name="choice3_question6" id="choice3_question6" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question6">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+
+        {# QUESTION 7 #}
+        <div class="button"><a href="#nav7">Question 7</a></div>
+        <div class="expandable" id="nav7">
+            <textarea name="question7" placeholder="Question 7" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question7">1 .</label>
+                    <input type="text" name="choice1_question7" id="choice1_question7" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question7">2 .</label>
+                    <input type="text" name="choice2_question7" id="choice2_question7" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question7">3 .</label>
+                    <input type="text" name="choice3_question7" id="choice3_question7" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question7">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+
+
+        {# QUESTION 8 #}
+        <div class="button"><a href="#nav8">Question 8</a></div>
+        <div class="expandable" id="nav8">
+            <textarea name="question8" placeholder="Question 8" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question8">1 .</label>
+                    <input type="text" name="choice1_question8" id="choice1_question8" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question8">2 .</label>
+                    <input type="text" name="choice2_question8" id="choice2_question8" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question8">3 .</label>
+                    <input type="text" name="choice3_question8" id="choice3_question8" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question8">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+
+
+
+        {# QUESTION 9 #}
+        <div class="button"><a href="#nav9">Question 9</a></div>
+        <div class="expandable" id="nav9">
+            <textarea name="question9" placeholder="Question 9" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question9">1 .</label>
+                    <input type="text" name="choice1_question9" id="choice1_question9" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question9">2 .</label>
+                    <input type="text" name="choice2_question9" id="choice2_question9" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question9">3 .</label>
+                    <input type="text" name="choice3_question9" id="choice3_question9" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question9">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+
+
+
+        {# QUESTION 10 #}
+        <div class="button"><a href="#nav10">Question 10</a></div>
+        <div class="expandable" id="nav10">
+            <textarea name="question10" placeholder="Question 10" required="required"></textarea>
+            <p class="titre">Propositions :</p>
+
+            <div class="choices">
+                <div class="choice">
+                    <label for="choice1_question10">1 .</label>
+                    <input type="text" name="choice1_question10" id="choice1_question10" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice2_question7">2 .</label>
+                    <input type="text" name="choice2_question10" id="choice2_question10" required="required">
+                </div>
+
+                <div class="choice">
+                    <label for="choice3_question10">3 .</label>
+                    <input type="text" name="choice3_question10" id="choice3_question10" required="required">
+                </div>
+            </div>
+            <p class="titre">Réponse :</p>
+            <select name="reponse_question10">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+
+        <input type="submit">
+            
+    </form>
+</div>
+</section>
+{% endblock %}
